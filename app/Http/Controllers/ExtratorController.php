@@ -13,7 +13,9 @@ class ExtratorController extends Controller
                                                                 'DATAREGISTRO',
                                                                 'DESCRICAONATUREZA',
                                                                 'EMPRESA',
-                                                                'CNPJ'
+                                                                'CNPJ',
+                                                                'RESUMOOBS1',
+                                                                'RESUMOOBS2'
                                                                 )->get();
         $cont = 0;                                                        
         foreach($FB as $linha){
@@ -28,6 +30,8 @@ class ExtratorController extends Controller
                     'DESCRICAONATUREZA' => $linha->DESCRICAONATUREZA,
                     'EMPRESA' => $linha->EMPRESA,
                     'CNPJ' => $linha->CNPJ,
+                    'RESUMOOBS1' => $linha->RESUMOOBS1,
+                    'RESUMOOBS2' => $linha->RESUMOOBS2,
                 ]);
                 }catch(Exception $e){
                     return 'ERROR'.$e;  
